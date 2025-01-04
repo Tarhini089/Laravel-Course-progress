@@ -57,14 +57,18 @@ $tasks = [
     '2023-03-04 12:00:00'
   ),
 ];
-/*dsvnjsdhnvsdvnsdlknv */
+
 Route::get('/', function () use($tasks) {
     return view ('index', [
         'tasks' => $tasks
     ]);
-});
+})->name('tasks,index');
 
-route::get('/hello', function() {
+route::get('/{id}', function ($id) {
+    return 'one single task';
+})->name('task.show');
+
+/* route::get('/hello', function() {
 return 'hello';
 })->name('hello');
 
@@ -75,8 +79,9 @@ route::get('/hallo', function(){
 route::get('/greet/{name}',function ($name) {
 
     return 'hello '. $name . '!';
-});
+}); */
 
 route::fallback(function () {
     return 'you are lost';
 });
+

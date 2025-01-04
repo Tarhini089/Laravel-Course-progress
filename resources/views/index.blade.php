@@ -4,11 +4,13 @@
 
 
 <div>
-    @if (count($task))
-        <div>there are a tasks!</div>
-    @else
-        <div>there is no tasks!</div>
-    @endif
-
+   <!--  @if (count($tasks)) -->
+        @forelse($tasks as $task)
+            <div>
+                <a href="{{ route('task.show', ['id'=> $task->id]) }}">{{ $task->title}}</a>
+            </div>
+        @empty
+            <div>there is no tasks!</div>
+        @endforelse
+<!--     @endif -->
 </div>
-
