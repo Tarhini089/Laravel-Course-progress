@@ -6,12 +6,10 @@
     <form method="POST" action="{{ route('tasks.store') }}"> 
         @csrf
         <div>
-            <lable>
-                title
-            </lable>
-            <input text="text" id="title" />
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" />
         </div>
-
+       
         <div>
             <lable for="description">Description</label>
             <textarea name="description" id="description" rows="5"></textarea>
